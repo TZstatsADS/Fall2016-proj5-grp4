@@ -1,4 +1,4 @@
-#Project: Stock Market Prediction Using Daily News
+#Stock Market Prediction Using Daily News
 + Group #4
 + Team Members:
   + Jing Mu (jm4269)
