@@ -1,4 +1,4 @@
-# ADS Final Project: 
+# ADS Final Project: Stock Market Prediction Using Daily News
 
 Term: Fall 2016
 
