@@ -28,4 +28,10 @@ Third, we compute two word clouds using 1-gram which refer to the highest and lo
 ##4 Model Fitting
 The table below shows the accuracy of different models on different word datasets.
 
+ngram/model | naive bayes | svm | lasso | ridge | adaboost | gbm | xgboost | random forest | var | logistic regression
+------------|-------------|-----|-------|-------|----------|-----|---------|---------------|-----|--------------------
+1gram       |  
+2gram       |
+3gram       |  
+
 ##5 Conclusion and Future Improvements
