@@ -19,6 +19,11 @@ The datasets look like this:
 ![headlines](https://github.com/TZstatsADS/Fall2016-proj5-proj5-grp4/blob/master/figs/headlines.png)
 
 ##2 Data Manipulation
++ We use the data before year 2016 as our training set and the rest as testing set.  
++ We convert all the headline to lowercase letters, split the sentence into a list of words, remove punctuation, stem the words (for instance, change “playing”, “played” to play) and transform them to a table of words counts.  
++ We used n-gram model where n = 1,2 and 3. We also deleted the words that appear in less than ten days otherwise it will lead to overfitting.  
++ Unigram is not quite useful since we cannot get a good idea of how a single word will change the stock price. For example, we do not know whether the oil price goes up or down just from the word “oil”. Bigram and trigram make better sense.  
++ Stopwords such as only, more, shouldn't can affect the meaning of a sentence in the headlines so we include them.   
 
 ##3 Exploratory Data Analysis
 First, we plot the overall trend for DJIA for the 9 years.
@@ -29,8 +34,7 @@ Second, we compute the increase rate of everay day using the adjusted closing in
 ![hist](https://github.com/TZstatsADS/Fall2016-proj5-proj5-grp4/blob/master/figs/hist1.png)
 The rate is approximately normal distributed, hence most of the rate are with the range [-2.5%, 2.5%].
 
-Third, we want to see which words (or phrases) occur most frequently in the headlines. So we use word clouds.
-![unigram](https://github.com/TZstatsADS/Fall2016-proj5-proj5-grp4/blob/master/figs/wc1.png)
+Third, we want to see which phrases occur most frequently in the headlines. So we use word clouds.
 ![bigram](https://github.com/TZstatsADS/Fall2016-proj5-proj5-grp4/blob/master/figs/wc2.png)
 ![trigram](https://github.com/TZstatsADS/Fall2016-proj5-proj5-grp4/blob/master/figs/wc3.png)
 
@@ -40,8 +44,7 @@ We have tried several types of response variables: 0/1(0=decrease, 1=increase or
 + Tobefinished
 
 ###Independent Variables:
-Among the three n-gram models, unigram does not work well because one single word does not make sense most of the time. 
-Trigram generally works better than bigram.
+In general, trigram works better than bigram.
 
 ##5 Model Evaluation
 
