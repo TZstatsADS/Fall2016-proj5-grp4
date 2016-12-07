@@ -3,8 +3,13 @@ library(randomForest)
 library(glmnet)
 library(gbm)
 library(ggplot2)
-data_all_in<-rbind(data_3_new,M_3)
+library(vars)
+load("data_3_new.Rdata")
+load("M_3")
+combine_dija<-read.csv("combine_dija")
 label_dija<-combine_dija$Label
+data_all_in<-rbind(data_3_new,M_3)
+
 #label<-label_num
 TPR_RM<-vector(length=50)
 FPR_RM<-vector(length=50)
