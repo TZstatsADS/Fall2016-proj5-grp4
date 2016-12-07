@@ -1,4 +1,4 @@
 # Project: 
 ### Doc folder
 
-The doc directory contains the report or presentation files. It can have subfolders.  
+The doc directory contains the contribution statement.  The final presentation is in the main folder not here.
