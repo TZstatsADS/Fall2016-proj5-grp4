@@ -23,7 +23,8 @@ Second, we compute the increase rate of everay day using the adjusted closing in
 ![hist](https://github.com/TZstatsADS/Fall2016-proj5-proj5-grp4/blob/master/figs/hist1.png)
 The rate is approximately normal distributed, hence most of the rate are with the range [-2.5%, 2.5%].
 
-Third, we compute two word clouds using 1-gram which refer to the highest and lowest increasing rate respectively.
+Third, we want to see which words occur most frequently in the headlines. So we use a word cloud.
+![wc1](https://github.com/TZstatsADS/Fall2016-proj5-proj5-grp4/blob/master/figs/wc1.png)
 
 ##4 Model Fitting
 The table below shows the accuracy of different models on different word datasets.
