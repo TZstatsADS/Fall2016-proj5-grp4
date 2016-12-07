@@ -10,7 +10,12 @@
 + Project summary: In this project, we try to predict DJIA (Dow Jones Industrial Average) using 25 everyday headlines from Reddit.
 
 ##1 Dataset Description
-We used two datasets from Kaggle in this project. One includes DJIA index from 08/08/2008 to 07/01/2016. Another includes top 25 news headlines from Reddit during the same time period. Both datasets can be downloaded [here](https://www.kaggle.com/aaron7sun/stocknews/downloads/stocknews.zip).
+We used two datasets from Kaggle in this project. One is called 'DJIA_table' which includes DJIA index from 08/08/2008 to 07/01/2016. Another is called 'Combined_News_DJIA' which includes top 25 news headlines from Reddit during the same time period, and a binary label indicating whether the index was increasing or decreasing. Both datasets can be downloaded [here](https://www.kaggle.com/aaron7sun/stocknews/downloads/stocknews.zip).
+The datasets look like this:
+###DJIA_table:
+![stockhead](https://github.com/TZstatsADS/Fall2016-proj5-proj5-grp4/blob/master/figs/stockhead.png)
+###Combined_News_DJIA:
+![headlines](https://github.com/TZstatsADS/Fall2016-proj5-proj5-grp4/blob/master/figs/headlines.png)
 
 ##2 Data Manipulation
 
