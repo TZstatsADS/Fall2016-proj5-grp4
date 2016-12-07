@@ -47,8 +47,8 @@ The table below shows the accuracy of different models on different word dataset
 
 ngram/model | naive bayes |  svm  | lasso | ridge | adaboost |  gbm  | xgboost | random forest |  var  
 ------------|-------------|-------|-------|-------|----------|-------|---------|---------------|------ 
-2gram       |             |       |       |       |          |       |         |               |
-3gram       |             |       |       |       |          |       |         |               | 57.6%
+bigram      |             |       |       |       |          |       |         |               |  48%
+trigram     |             |       |       |       |          |       |         |               | <font color=red>57.6%</font>
 
 Here is a time series plot of var model.
 ![var](https://github.com/TZstatsADS/Fall2016-proj5-proj5-grp4/blob/master/figs/VAR.png)
