@@ -73,7 +73,7 @@ Here is the ROC curve of random forest model.
 + But if we consider each day is related, Vector AR(2) model is the best choice. We predict each day adjust close value in 2016 until July 1st based on every day data before this day. For example, if we want to predict the adjust close index for 1/20/2016, we should use every data before 1/20/2016 in VAR model. In order to aviod overfitting and time wasting, we only use 10 phrases with highest variances. 
 
 ##6 Conclusion and Future Improvements
-If we use the Lasso model, we should trade the porfolio at opening time of every day.
+If we use the Lasso model, we should trade the porfolio at opening time of every day.  
 If we use the Var model, we should tade the porfolio towards the end of every day.
 
 In the future, we could use higher order of ngrams and introduce more variables to predict better results.
