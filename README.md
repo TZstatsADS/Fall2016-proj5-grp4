@@ -20,7 +20,7 @@ Following [suggestions](http://nicercode.github.io/blog/2013-04-05-projects/) by
 proj/
 ├── lib/ computation codes
 ├── data/ the orginal data and data processed
-├── doc/ 
+├── doc/ just the contibution statement
 ├── figs/ figure files produced during the project and running of the codes
 └── output/ nothing here since our outputs are in the presentation file
 ```
