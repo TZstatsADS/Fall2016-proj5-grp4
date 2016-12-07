@@ -41,8 +41,12 @@ Third, we want to see which phrases occur most frequently in the headlines. So w
 
 ##4 Model Fitting
 ###Response Variable:
-We have tried several types of response variables: (1) 0/1(0=decrease, 1=increase or the same) for from yesterday's to today's index price, (2) 0/1 for from today's to tomorrow's opening index price, (3) 0/1 for from today's adjusted close index price to tomorrow's opening index price, (4) adjusted close index price, (5) and increasing rate.  
-+ Tobefinished
+We have tried several types of response variables: 
++ 0/1(0=decrease, 1=increase or the same) for from yesterday's to today's index price
++ 0/1 for from today's to tomorrow's opening index price
++ 0/1 for from today's adjusted close index price to tomorrow's opening index price
++ adjusted close index price
++ increasing rate.  
 
 ###Independent Variables:
 In general, trigram works better than bigram.
