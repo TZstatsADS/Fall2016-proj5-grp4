@@ -20,10 +20,11 @@ The datasets look like this:
 
 ##2 Data Manipulation
 + We use the data before year 2016 as our training set and the rest as testing set.  
-+ We convert all the headline to lowercase letters, split the sentence into a list of words, remove punctuation, stem the words (for instance, change “playing”, “played” to play) and transform them to a table of words counts.  
++ We convert all the headline to lowercase letters, split the sentence into a list of words, remove punctuation, stem the words (for instance, change “playing”, “played” to “play”) and transform them to a table of words counts.  
 + We tried n-gram model where n = 1,2 and 3. We also deleted the words that appear in less than ten days otherwise it will lead to overfitting.  
 + Unigram is not quite useful since we cannot get a good idea of how a single word will change the stock price. For example, we do not know whether the oil price goes up or down just from the word “oil”. Bigram and trigram make better sense.  
-+ Stopwords such as only, more, shouldn't can affect the meaning of a sentence in the headlines so we include them.   
++ Stopwords such as "only", "more", "against", "shouldn't" can affect the meaning of a sentence in the headlines so we include them.  
++ For test data set, if the "words" appear in the training data set dictionary, we count the number, if not we ignore them. And for the "words" that in the dictionary and not in the test set, we assign count 0.
 
 ##3 Exploratory Data Analysis
 First, we plot the overall trend for DJIA for the 9 years.
