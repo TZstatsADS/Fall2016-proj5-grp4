@@ -63,6 +63,7 @@ Here is the ROC curve of random forest model.
 ![RMROC](https://github.com/TZstatsADS/Fall2016-proj5-proj5-grp4/blob/master/figs/ROC RM.png)
 
 + If we consider each day independent, then we choose using features as 3-gram count, response variable as (2) 0/1 for from today's to tomorrow's opening index price which means to use today's news to predict whether tomorrow's opening will increase from today's opening since we assume the stock market will absord the information of the news today. And we use LASSO as our final model since the number of observations and predictors are almost equal, the word count is a sparse matrix and the cross validation accuracy rate is the highest.
++ But if we consider each day is connected, then as a result, the Vector AR(2) model is a good choice. We predict each day adjust close value in 2016 until July 1st based on every day data before this day. For example, if we want to predict the adjust close index for 1/20/2016, we should use every data before 1/20/2016 in VAR model. And for the purpose of avoiding overfitting and time-wasting, we only use the most varying top 10 features before the prediction date. 
 
 ##6 Conclusion and Future Improvements
 Overall, none of the models reach an accuracy of 60%, which means it is hard to predict stock index just using news headlines. 
