@@ -76,3 +76,4 @@ p<-ifelse(pred.dis>=0,1,0)
 mean(v==p)
 
 
+
