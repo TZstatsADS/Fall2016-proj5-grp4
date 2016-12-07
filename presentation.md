@@ -57,7 +57,7 @@ The table below shows the accuracy of different models with different response v
 
 response/model |  svm  | lasso | random forest |  var  
 ---------------|-------|-------|---------------|------ 
-1              | 53.2% | 55.2% |    51.2%      |  48%
+1              | 53.2% | **55.2%** |    51.2%      |  48%
 2              | 50.3% | 52.2% |    50.8%      | **57.6%**
 
 Here is a time series plot of var model.  
