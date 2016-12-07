@@ -41,7 +41,7 @@ Third, we want to see which phrases occur most frequently in the headlines. So w
 
 ##4 Model Fitting
 ###Response Variable:
-We have tried several types of response variables: 0/1(0=decrease, 1=increase or the same), adjusted close index, and increasing rate.  
+We have tried several types of response variables: 0/1(0=decrease, 1=increase or the same) for from yesterday's to today's index price, 0/1 for from today's to tomorrow's opening index price, 0/1 for from today's adjusted close index price to tomorrow's opening index price, adjusted close index price, and increasing rate.  
 + Tobefinished
 
 ###Independent Variables:
