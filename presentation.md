@@ -45,12 +45,13 @@ Trigram generally works better than bigram.
 The table below shows the accuracy of different models on different word datasets.
 
 
-ngram/model | naive bayes |  svm  | lasso | ridge | adaboost |  gbm  | xgboost | random forest |  var  
-------------|-------------|-------|-------|-------|----------|-------|---------|---------------|------ 
-bigram      |             |       |       |       |          |       |         |               |  48%
-trigram     |             |       |       |       |          |       |         |               | <font color=red>57.6%</font>
+ngram/model | naive bayes |  svm  | lasso | adaboost |  gbm  | xgboost | random forest |  var  
+------------|-------------|-------|-------|----------|-------|---------|---------------|------ 
+bigram      |             |       |       |          |       |         |               |  48%
+trigram     |             |       |       |          |       |         |               | **57.6%**
 
 Here is a time series plot of var model.
 ![var](https://github.com/TZstatsADS/Fall2016-proj5-proj5-grp4/blob/master/figs/VAR.png)
 
 ##5 Conclusion and Future Improvements
+Overall, none of the models reach an accuracy of 60%, which means it is hard to predict stock index just using news headlines. 
