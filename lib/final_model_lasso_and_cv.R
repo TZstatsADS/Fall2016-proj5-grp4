@@ -1,3 +1,4 @@
+library("glmnet")
 #lasso
 lasso.mod=glmnet(x=as.matrix(new_data_train_3[,-1]),y=as.factor(new_data_train_3[,1]),family="binomial",alpha=1)
 cv.out=cv.glmnet(x=as.matrix(new_data_train_3[,-1]),y=as.factor(new_data_train_3[,1]),family="binomial",alpha=1)
