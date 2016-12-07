@@ -57,8 +57,10 @@ The table below shows the accuracy of different models with different response v
 
 response/model |  svm  | lasso | random forest |  var  
 ---------------|-------|-------|---------------|------ 
-1              | 53.2% | **55.2%** |    51.2%      |  48%
-2              | 50.3% | 52.2% |    50.8%      | **57.6%**
+1              | 53.2% | **55.2%** |        51.2%  |  48%
+2              | 50.3% | 52.2% |    50.8%      | **57.6%**
+
+Other models, such as gbm or neural network either gives accuracy less than 50%, or always predict the same value. Therefore, we do not include them in the table.
 
 Here is a time series plot of var model.  
 ![var](https://github.com/TZstatsADS/Fall2016-proj5-proj5-grp4/blob/master/figs/VAR_3_gram.png)
@@ -66,9 +68,12 @@ Here is a time series plot of var model.
 Here is the ROC curve of random forest model.
 ![RMROC](https://github.com/TZstatsADS/Fall2016-proj5-proj5-grp4/blob/master/figs/ROC RM.png)
 
-+ If we consider each day as independent, we use response variable as (2) 0/1 for from today's to tomorrow's opening index price which means to use today's news to predict whether tomorrow's opening will increase comparing to today's opening. This requires the assumption that the stock market takes one day to absorb the news information. In this case, LASSO works best because the number of observations and predictors are almost equal, the word count is a sparse matrix and the cross validation accuracy rate is the highest.
++ If we consider each day as independent, we use response variable as (1) 0/1 for from today's to tomorrow's opening index price which means to use today's news to predict whether tomorrow's opening will increase comparing to today's opening. This requires the assumption that the stock market takes one day to absorb the news information. In this case, LASSO works best because the number of observations and predictors are almost equal, the word count is a sparse matrix and the cross validation accuracy rate is the highest.
 
 + But if we consider each day is related, Vector AR(2) model is the best choice. We predict each day adjust close value in 2016 until July 1st based on every day data before this day. For example, if we want to predict the adjust close index for 1/20/2016, we should use every data before 1/20/2016 in VAR model. In order to aviod overfitting and time wasting, we only use 10 phrases with highest variances. 
 
 ##6 Conclusion and Future Improvements
-Overall, none of the models reaches an accuracy of 60%, which means it is hard to predict stock index using only news headlines. 
+If we use the Lasso model, we should trade the porfolio at opening time of every day.
+If we use the Var model, we should tade the porfolio towards the end of every day.
+
+In the future, we could use higher order of ngrams and 
