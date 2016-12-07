@@ -35,8 +35,8 @@ Third, we want to see which words (or phrases) occur most frequently in the head
 
 ##4 Model Fitting
 ###Response Variable:
-We have tried three types of response variables: 0/1(0=decrease, 1=increase or the same), adjusted close index, and increasing rate.
-+Tobefinished
+We have tried three types of response variables: 0/1(0=decrease, 1=increase or the same), adjusted close index, and increasing rate.  
++ Tobefinished
 
 ###Independent Variables:
 Among the three n-gram models, unigram does not work well because one single word does not make sense most of the time. 
@@ -44,10 +44,13 @@ Trigram generally works better than bigram.
 
 The table below shows the accuracy of different models on different word datasets.
 
-ngram/model | naive bayes | svm | lasso | ridge | adaboost | gbm | xgboost | random forest | var | logistic regression
-------------|-------------|-----|-------|-------|----------|-----|---------|---------------|-----|--------------------
-1gram       |  
+
+ngram/model | naive bayes | svm | lasso | ridge | adaboost | gbm | xgboost | random forest |  var  | logistic regression
+------------|-------------|-----|-------|-------|----------|-----|---------|---------------|------ |--------------------
 2gram       |
-3gram       |  
+3gram       |                                                                              | 57.6% |
+
+Here is a time series plot of var model.
+![var](https://github.com/TZstatsADS/Fall2016-proj5-proj5-grp4/blob/master/figs/VAR.png)
 
 ##5 Conclusion and Future Improvements
