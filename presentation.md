@@ -50,7 +50,7 @@ ngram/model | naive bayes |  svm  | lasso | adaboost |  gbm  | xgboost | random 
 bigram      |             |       |       |          |       |         |               |  48%
 trigram     |             |       |       |          |       |         |               | **57.6%**
 
-Here is a time series plot of var model.
+Here is a time series plot of var model.  
 ![var](https://github.com/TZstatsADS/Fall2016-proj5-proj5-grp4/blob/master/figs/VAR.png)
 
 ##5 Conclusion and Future Improvements
