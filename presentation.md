@@ -42,23 +42,23 @@ Third, we want to see which phrases occur most frequently in the headlines. So w
 ##4 Model Fitting
 ###Response Variable:
 We have tried several types of response variables: 
-+ 0/1(0=decrease, 1=increase or the same) for from yesterday's to today's index price
-+ 0/1 for from today's to tomorrow's opening index price
-+ 0/1 for from today's adjusted close index price to tomorrow's opening index price
-+ adjusted close index price
-+ increasing rate.  
++ (1) 0/1 (0=decrease, 1=increase or the same) for from yesterday's to today's adjusted closing index price
++ (2) 0/1 for from today's to tomorrow's opening index price
++ (3) 0/1 for from today's adjusted close index price to tomorrow's opening index price
++ (4) adjusted close index price
++ (5) increasing rate.  
 
 ###Independent Variables:
 In general, trigram works better than bigram.
 
 ##5 Model Evaluation
 
-The table below shows the accuracy of different models on different word datasets.  
+The table below shows the accuracy of different models with different response variables using trigram:  
 
-ngram/model | naive bayes |  svm  | lasso | adaboost |  gbm  | xgboost | random forest |  var  
-------------|-------------|-------|-------|----------|-------|---------|---------------|------ 
-bigram      |             |       |       |          |       |         |               |  48%
-trigram     |             |       | 55.2% |          |       |         |               | **57.6%**
+response/model |  svm  | lasso |  gbm  | random forest |  var  
+---------------|-------|-------|-------|---------------|------ 
+2              | 53.2% |       |       |               |  48%
+3              | 50.3% | 55.2% |       |               | **57.6%**
 
 Here is a time series plot of var model.  
 ![var](https://github.com/TZstatsADS/Fall2016-proj5-proj5-grp4/blob/master/figs/VAR_3_gram.png)
