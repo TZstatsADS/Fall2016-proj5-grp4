@@ -21,7 +21,7 @@ The datasets look like this:
 ##2 Data Manipulation
 + We use the data before year 2016 as our training set and the rest as testing set.  
 + We convert all the headline to lowercase letters, split the sentence into a list of words, remove punctuation, stem the words (for instance, change “playing”, “played” to “play”) and transform them to a table of words counts.  
-+ We tried n-gram model where n = 1,2 and 3. We also deleted the words that appear in less than ten days otherwise it will lead to overfitting.  
++ We tried n-gram where n = 1,2 and 3. We also deleted the words that appear in less than ten days otherwise it will lead to overfitting.  
 + Unigram is not quite useful since we cannot get a good idea of how a single word will change the stock price. For example, we do not know whether the oil price goes up or down just from the word “oil”. Bigram and trigram make better sense.  
 + Stopwords such as "only", "more", "against", "shouldn't" can affect the meaning of a sentence in the headlines so we include them.  
 + For test data set, if the "words" appear in the training data set dictionary, we count the number, if not we ignore them. And for the "words" that in the dictionary and not in the test set, we assign count 0.
@@ -41,7 +41,7 @@ Third, we want to see which phrases occur most frequently in the headlines. So w
 
 ##4 Model Fitting
 ###Response Variable:
-We have tried several types of response variables: 0/1(0=decrease, 1=increase or the same) for from yesterday's to today's index price, 0/1 for from today's to tomorrow's opening index price, 0/1 for from today's adjusted close index price to tomorrow's opening index price, adjusted close index price, and increasing rate.  
+We have tried several types of response variables: (1) 0/1(0=decrease, 1=increase or the same) for from yesterday's to today's index price, (2) 0/1 for from today's to tomorrow's opening index price, (3) 0/1 for from today's adjusted close index price to tomorrow's opening index price, (4) adjusted close index price, (5) and increasing rate.  
 + Tobefinished
 
 ###Independent Variables:
@@ -54,13 +54,15 @@ The table below shows the accuracy of different models on different word dataset
 ngram/model | naive bayes |  svm  | lasso | adaboost |  gbm  | xgboost | random forest |  var  
 ------------|-------------|-------|-------|----------|-------|---------|---------------|------ 
 bigram      |             |       |       |          |       |         |               |  48%
-trigram     |             |       |       |          |       |         |               | **57.6%**
+trigram     |             |       | 55.2% |          |       |         |               | **57.6%**
 
 Here is a time series plot of var model.  
 ![var](https://github.com/TZstatsADS/Fall2016-proj5-proj5-grp4/blob/master/figs/VAR_3_gram.png)
 
 Here is the ROC curve of random forest model.
 ![RMROC](https://github.com/TZstatsADS/Fall2016-proj5-proj5-grp4/blob/master/figs/ROC RM.png)
+
++ If we consider each day independent, then we choose using features as 3-gram count, response variable as (2) 0/1 for from today's to tomorrow's opening index price which means to use today's news to predict whether tomorrow's opening will increase from today's opening since we assume the stock market will absord the information of the news today. And we use LASSO as our final model since the number of observations and predictors are almost equal, the word count is a sparse matrix and the cross validation accuracy rate is the highest.
 
 ##6 Conclusion and Future Improvements
 Overall, none of the models reach an accuracy of 60%, which means it is hard to predict stock index just using news headlines. 
