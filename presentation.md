@@ -58,5 +58,8 @@ trigram     |             |       |       |          |     �
 Here is a time series plot of var model.  
 ![var](https://github.com/TZstatsADS/Fall2016-proj5-proj5-grp4/blob/master/figs/VAR_3_gram.png)
 
+Here is the ROC curve of random forest model.
+![RMROC](https://github.com/TZstatsADS/Fall2016-proj5-proj5-grp4/blob/master/figs/ROC RM.png)
+
 ##6 Conclusion and Future Improvements
 Overall, none of the models reach an accuracy of 60%, which means it is hard to predict stock index just using news headlines. 
