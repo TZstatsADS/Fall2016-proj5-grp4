@@ -277,3 +277,69 @@ mean(success)
 #52.25504%
 #View(train_dataset)
 
+setwd("~/Desktop/ADS Project 5/stocknews (1)")
+#####add increase or decrease label to data
+label.data<-read.csv("Combined_News_DJIA.csv")
+#####get label from csv file
+label.data.old<-label.data[1:1863,]
+label<-label.data.old[,2]
+setwd("~/Desktop")
+load("data3_new.RData")
+dim(data_3_new)
+data<-cbind(label,data_3_new)###combine data and label
+dim(data)
+#################################1.SVM Method for ADj close and ADj close 
+library(e1071)
+###svm fit model
+svm.fit<-svm(x=train.data[,-1],y=train.data[,1],kernel = "polynomial",gamma=0,cost=1)
+###tune svm
+svm.tune<-tune.svm(x=train.data[,-1],y=train.data[,1],kernel = "polynomial",gamma=rep(0,5,1),cost=c(0.01,0.1,1,2))
+###
+predict.svm<-predict(svm.fit,test.data[,-1])
+for (i in 1:363) {
+  if (predict.svm[i] > 0.5)
+    predict.svm[i]=1
+    else
+      predict.svm[i]=0
+}
+mean(predict.svm==test.data[,1])
+#################################2.SVM method for open and Adj Close
+setwd("~/Desktop/ADS Project 5/stocknews (1)")
+load("data3_new.RData")
+label.data<-read.csv("DJIA_table.csv")
+label<-label.data$X[-c(1:126)]###label without 2016 data
+data<-cbind(label[length(label):1], data_3_new)
+label.test<-label.data$X[c(126:2)]###label for test data 2016
+library(e1071)
+svm.fit<-svm(x=data[,-1],y=data[,1],kernel = "polynomial",gamma=0,cost=1)
+predict.svm<-predict(svm.fit,M_3)
+for (i in 1:126) {
+  if (predict.svm[i] >= 0.5)
+    predict.svm[i]=1
+  else
+    predict.svm[i]=0
+}
+mean(predict.svm==label.test)###test Accuracy Rate
+###############################
+###############################3.SVM Method for Open and Open
+setwd("~/Desktop")
+load("open_open_train.RData")
+load("open_open_test.RData")
+#####svm
+svm.fit<-svm(x=new_data_train_3[,-1],y=new_data_train_3[,1],kernel = "polynomial",gamma=0,cost=1)
+predict.svm<-predict(svm.fit,new_data_test_3[,-1])
+####we let results which are less than 0.5 will be thought as 0, others are 1
+for (i in 1:125) {
+  if (predict.svm[i] >= 0.5)
+    predict.svm[i]=1
+  else
+    predict.svm[i]=0
+}
+mean(predict.svm==new_data_test_3[,1])###test Accuracy Rate
+
+#####Use 2016 data as test data
+load("M_3.RData")##2016 data
+label.test<-label.data$X[c(126:2)]##Label, it can be found in "DJIA_table.csv" file in github
+##lasso regression
+lasso.pre.test<-predict(lasso.fit,M_3[-126,],type="response")
+mean(lasso.pre.test[,ncol(lasso.pre.test)]==label.test)
