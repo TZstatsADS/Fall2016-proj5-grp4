@@ -26,3 +26,5 @@ proj/
 ```
 
 Please see each subfolder for a README file.
+
+Final report can be accessed [here](https://github.com/TZstatsADS/Fall2016-proj5-proj5-grp4/blob/master/presentation.md)
