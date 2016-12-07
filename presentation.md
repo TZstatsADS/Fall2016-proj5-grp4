@@ -76,4 +76,4 @@ Here is the ROC curve of random forest model.
 If we use the Lasso model, we should trade the porfolio at opening time of every day.
 If we use the Var model, we should tade the porfolio towards the end of every day.
 
-In the future, we could use higher order of ngrams and 
+In the future, we could use higher order of ngrams and introduce more variables to predict better results.
